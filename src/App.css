@@ -6,9 +6,21 @@
 }
 
 .fighters-grid {
+  display: flex;
   background-color: #ccc;
   border: 1px solid #858585;
   border-radius: 5px;
   min-width: 45%;
   min-height: 500px;
+}
+
+.fighter{
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  transition: transform 0.3s;
+}
+
+.fighter:hover{
+  transform: scale(1.1);
 }
