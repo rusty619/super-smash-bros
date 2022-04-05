@@ -12,15 +12,16 @@ const characters = [
 
 function App() {
   const [visible, setVisible] = useState(false)
+  const [selectCharacter, setSelectCharacter] = useState(characters[0])
   return (
     <div className="App">
       <h1>Fighters</h1>
       <div className="fighters-grid">
         {characters.map((element,i) => {
-          return <Fighter name={element.name} color={element.color} setVisible={setVisible}/>
+          return <Fighter name={element.name} color={element.color} setVisible={setVisible} selectCharacter={selectCharacter} setSelectCharacter={setSelectCharacter}/>
         })}
       </div>
-      <FighterScreen  isVisible={visible} setVisible={setVisible}/>
+      <FighterScreen  isVisible={visible} setVisible={setVisible} selectCharacter={selectCharacter}/>
     </div>
   );
 }
