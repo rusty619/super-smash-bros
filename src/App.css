@@ -40,3 +40,16 @@
   position: fixed;
   bottom: 0;
 }
+
+.name-bg{}
+
+.name-fg{
+  font-size: 25em;
+}
+
+.char-portrait{
+  position: absolute;
+  right: -10%;
+  top: -1%;
+  z-index: -1;
+}
