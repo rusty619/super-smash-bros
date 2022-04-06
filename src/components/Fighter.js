@@ -11,7 +11,7 @@ export default ({name, color, setVisible, setSelectCharacter}) => {
             backgroundColor: color, 
             backgroundImage: `url(https://www.smashbros.com/assets_v2/img/fighter/${name.toLowerCase()}/main.png)`
             }}>
-            <h4>{name}</h4>
+            <h4>{name.replace('_', ' ')}</h4>
         </div>
     )
 }

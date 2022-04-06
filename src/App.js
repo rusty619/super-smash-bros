@@ -10,9 +10,12 @@ const characters = [
   {name: "Sheik", color: "lightskyblue"},
   {name: "cloud", color: "lightgreen"},
   {name: "zelda", color: "gold"},
-  {name: "samus", coloe: "firebrick"},
-  {name: "link", color: "yellow"}
-  
+  {name: "samus", color: "firebrick"},
+  {name: "link", color: "yellow"},
+  {name: "captain_falcon", color: "orange"},
+  {name: "donkey_kong", color: "#733C3C"},
+  {name: "peach", color: "#F190B7"},
+  {name: "mario", color: "#B20600"},
 ]
 
 function App() {
