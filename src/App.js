@@ -1,37 +1,45 @@
 import './App.css';
-import Fighter from "./components/Fighter.js"
+import Fighter from './components/Fighter';
 import FighterScreen from './components/FighterScreen';
 import SideNavigation from './components/SideNavigation';
-import { useState } from "react"
+import { useState } from 'react';
 
 const characters = [
-  {name: "Roy",color: "red"},
-  {name: "Fox", color: "green"},
-  {name: "Ganondorf", color: "purple"},
-  {name: "Sheik", color: "lightskyblue"},
-  {name: "cloud", color: "lightgreen"},
-  {name: "zelda", color: "gold"},
-  {name: "samus", color: "firebrick"},
-  {name: "link", color: "yellow"},
-  {name: "captain_falcon", color: "orange"},
-  {name: "donkey_kong", color: "#733C3C"},
-  {name: "peach", color: "#F190B7"},
-  {name: "mario", color: "#B20600"},
+  {name: 'Roy', color: ['firebrick', 'lightblue']},
+  {name: 'Fox', color: ['green', 'brown']},
+  {name: 'Ganondorf', color: ['white', 'midnightblue']},
+  {name: 'Sheik', color: ['lightskyblue', 'white']},
+  {name: 'Cloud', color: ['mediumseagreen', 'gold']},
+  {name: 'Falco', color: ['purple', 'lightskyblue']},
+  {name: 'Byleth', color: ['teal', '#d33']},
+  {name: 'Link', color: ['lightblue', 'goldenrod']},
+  {name: 'Kazuya', color: ['lightblue', 'goldenrod']},
+  {name: 'Sephiroth', color: ['lightblue', 'midnightblue', '#fff']},
+  {name: 'Dark_Samus', color: ['lightblue', 'goldenrod']},
+  {name: 'Donkey_Kong', color: ['tan', 'brown']},
+  {name: "kirby", color:['pink','goldenrod']},
+  {name: "captain_falcon", color:['#B20600','#DFDFDE']},
+  {name: "ryu", color:['#F7F5F2','#323232']},
+  {name: "ken", color: ['#F76E11','#362222']},
+  {name: "zero_suit_samus", color:['#0E185F','#EFFFFD']},
+  {name: "bayonetta", color: ['#180A0A','#524A4E']},
+  {name: "pikachu", color: ['#FFF56D','#FFD93D']},
+  {name: "richter", color: ['#F3E9DD','#4700D8']}
 ]
 
 function App() {
   const [visible, setVisible] = useState(false)
-  const [selectCharacter, setSelectCharacter] = useState(characters[0])
+  const [selectedCharacter, setSelectedCharacter] = useState(characters[0])
   return (
     <div className="App">
-      <h1>Fighters</h1>
-      <div className="fighters-grid">
-        {characters.map((element,i) => {
-          return <Fighter name={element.name} color={element.color} setVisible={setVisible} selectCharacter={selectCharacter} setSelectCharacter={setSelectCharacter}/>
+     <h1>FIGHTERS</h1>
+     <div className="fighters-grid">
+        {characters.map((element) => {
+          return (<Fighter name={element.name} color={element.color} setVisible={setVisible} setSelectedCharacter={setSelectedCharacter} />)
         })}
-      </div>
-      <FighterScreen  isVisible={visible} setVisible={setVisible} selectCharacter={selectCharacter}/>
-      <SideNavigation isVisible={visible} characters={characters}/>
+     </div>
+      <FighterScreen isVisible={visible} setVisible={setVisible} selectedCharacter={selectedCharacter} />
+      <SideNavigation isVisible={visible} characters={characters} setSelectedCharacter={setSelectedCharacter} />
     </div>
   );
 }
