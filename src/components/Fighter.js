@@ -3,9 +3,10 @@
 export default ({name, color, setVisible, setSelectCharacter}) => {
     return(
         <div 
-            onClick = {() => {
+            onClick = {() => { 
                 setSelectCharacter({name: name, color: color})
-                setVisible(true)}}
+                setVisible(true)}
+            }
             className="fighter" 
             style={{ 
             backgroundColor: color, 

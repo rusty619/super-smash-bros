@@ -1,6 +1,7 @@
 import './App.css';
 import Fighter from "./components/Fighter.js"
 import FighterScreen from './components/FighterScreen';
+import SideNavigation from './components/SideNavigation';
 import { useState } from "react"
 
 const characters = [
@@ -30,6 +31,7 @@ function App() {
         })}
       </div>
       <FighterScreen  isVisible={visible} setVisible={setVisible} selectCharacter={selectCharacter}/>
+      <SideNavigation isVisible={visible} characters={characters}/>
     </div>
   );
 }
